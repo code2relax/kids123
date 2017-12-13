@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Numbers
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="card-background-page">
+ 
+  <ion-card>
+   
+    <div class="left-arrow"><ion-icon *ngIf="counter" name="arrow-dropleft" (click) = "decrement()"></ion-icon></div>
+    <div class="number">
+     <div class="number-numeral">{{counter}}</div><div class="number-word">{{word}}</div>
+ </div>
+     <div class="right-arrow"><ion-icon name="arrow-dropright" (click) = "increment()"></ion-icon></div>
+ 
+  </ion-card>
+<audio  autoplay>
+  <source src="../../assets/audio/a.mp4" type="audio/mpeg">
+</audio>
+</ion-content>

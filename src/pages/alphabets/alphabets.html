@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Alphabets
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="card-background-page">
+ 
+  <ion-card>
+   <div class="left-arrow"><ion-icon *ngIf="counter" name="arrow-dropleft" (click) = "decrement()"></ion-icon></div>
+     <div class="alphabet"> 
+     <div class="upper-case">{{alphabet}}</div>
+     <div class="lower-case">{{lAlphabet}}</div>
+  </div>
+   <div class="right-arrow"><ion-icon *ngIf="counter  < length-1" name="arrow-dropright" (click) = "increment()"></ion-icon></div>
+  </ion-card>
+</ion-content>

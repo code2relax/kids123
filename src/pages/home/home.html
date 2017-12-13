@@ -1,0 +1,52 @@
+
+<ion-content padding>
+  
+  <ion-card>
+ 
+  <ion-list>
+
+  <ion-item (click)="goToNumbers()">
+    <ion-thumbnail item-start>
+      <img src="../../assets/imgs/123.png">
+    </ion-thumbnail>
+   <button ion-item >
+     Numbers
+    </button>
+  </ion-item>
+
+
+  <ion-item  (click)="goToAlphabets()">
+    <ion-thumbnail item-start>
+      <img src="../../assets/imgs/abc.png">
+    </ion-thumbnail>
+    
+    <button ion-item>
+      Alphabets
+    </button>
+  </ion-item>
+   
+   <ion-item>
+    <ion-thumbnail item-start>
+      <img src="../../assets/imgs/shapes.png">
+    </ion-thumbnail>
+    
+    <button ion-item (click)="goToShapes()">
+      Shapes
+    </button>
+  </ion-item>
+
+<ion-item>
+    <ion-thumbnail item-start>
+      <img src="../../assets/imgs/colors.png">
+    </ion-thumbnail>
+    
+    <button ion-item (click)="goToColors()">
+      Colors
+    </button>
+  </ion-item>
+
+  </ion-list>
+</ion-card>
+
+</ion-content>
+

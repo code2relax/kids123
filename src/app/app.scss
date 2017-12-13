@@ -1,0 +1,125 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+.card-background-page {
+	display: flex;
+  ion-card {
+    
+    display: flex;
+
+
+    .right-arrow {
+		font-size: 40px;		
+	}
+
+	.left-arrow {
+		font-size: 40px;
+	}
+  }
+
+ion-item {
+	text-align: center;
+}
+::-webkit-scrollbar{ display:none; }
+
+  .card-title {;
+   text-align: center;
+    font-size: 20.0em;
+    width: 100%;
+    font-weight: bold;
+    color: #000;
+  }
+
+  .bottom-arrow { 
+	  display: table-cell;
+	  vertical-align: bottom;
+  }
+}
+
+
+.alphabet {
+  	display: flex;
+  	
+  	width: 100%;
+  	height: 80vh;
+  	text-align: center;
+
+	.upper-case {
+		flex: 1 auto;
+		font-size: 30vw;
+	}
+
+	.lower-case {
+		flex: 1 auto;
+		font-size: 30vw;
+	}
+}
+
+.number {
+  	display: flex;
+  	flex-direction: column;
+  	width: 100%;
+  	height: 80vh;
+  	text-align: center;
+
+	.right-arrow {
+		font-size: 40px;		
+	}
+
+	.left-arrow {
+		font-size: 40px;
+	}
+
+   .number-word {
+   font-size: 2em;
+   
+  }
+   .number-numeral {;
+   font-size: 12em;
+  }
+  }
+
+
+.color {
+  	display: flex;
+  	flex-direction: column;
+  width: 100%;
+  	height: 80vh;
+  	text-align: center;
+
+	.right-arrow {
+		font-size: 40px;		
+	}
+
+	.left-arrow {
+		font-size: 40px;
+	}
+
+   .number-word {
+   font-size: 2em;
+  }
+   .number-numeral {;
+   font-size: 12em;
+  }
+
+  img {
+  	padding-top:5px;
+  	display: inline-block;
+  	width: 300px;
+  }
+
+}
