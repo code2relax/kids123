@@ -9,7 +9,7 @@ import _ from 'lodash/fp'
 
 
 export class Numbers {
-  counter: int = 0;
+  counter: number = 0;
   word: string =  _.compose(_.startCase, NumberToWord.toWords)(this.counter);
   constructor(public navCtrl: NavController) {}
 

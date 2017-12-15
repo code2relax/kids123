@@ -7,9 +7,9 @@ import { NavController } from 'ionic-angular';
 
 
 export class Alphabets {
-  counter: int = 0;
-  length: int = 26;
-  charCode: int = 65;
+  counter: number = 0;
+  length: number = 26;
+  charCode: number = 65;
   alphabet: string = String.fromCharCode(this.charCode);
   lAlphabet: string = String.fromCharCode(this.charCode+32);
 
@@ -34,7 +34,7 @@ export class Alphabets {
   updateAlphabet() {
     this.alphabet = String.fromCharCode(this.charCode);
     this.lAlphabet = String.fromCharCode(this.charCode+32); 
-    (new Audio('../../assets/audio/'+this.lAlphabet+'.mp4')).play();
+    (new Audio('assets/audio/'+this.lAlphabet+'.mp4')).play();
   }
 
 }

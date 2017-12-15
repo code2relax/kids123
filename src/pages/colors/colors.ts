@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import NumberToWord from 'number-to-words';
 import _ from 'lodash/fp'
 
 @Component({
@@ -9,9 +8,9 @@ import _ from 'lodash/fp'
 
 
 export class Colors {
-  colors: array = ['red', 'black', 'blue','brown','gray', 'green', 'orange','pink','yellow','white'];
-  length: int = _.size(this.colors);
-  counter: int = 0;
+  colors: string[] = ['red', 'black', 'blue','brown','gray', 'green', 'orange','pink','yellow','white'];
+  length: number = _.size(this.colors);
+  counter: number = 0;
   word: string = _.compose(_.startCase, _.get(this.counter))(this.colors);
   
   constructor(public navCtrl: NavController) {}
