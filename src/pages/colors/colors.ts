@@ -12,14 +12,14 @@ export class Colors {
   length: number = _.size(this.colors);
   counter: number = 0;
   word: string = _.compose(_.startCase, _.get(this.counter))(this.colors);
-  
+  kcolor: string = this.colors[this.counter];
   constructor(public navCtrl: NavController) {}
 
   increment() {
   if (this.counter < this.length-1) {
-
   	 ++this.counter;
   	 this.word =  _.compose(_.startCase, _.get(this.counter))(this.colors);
+     
     } 
   }
  
