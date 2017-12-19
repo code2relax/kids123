@@ -73,7 +73,7 @@ ion-item {
   	display: flex;
   	flex-direction: column;
   	width: 100%;
-  	height: 80vh;
+  	height: 100%;
   	text-align: center;
 
 	.right-arrow {
@@ -89,7 +89,7 @@ ion-item {
    
   }
    .number-numeral {;
-   font-size: 12em;
+   font-size: 6em;
   }
   }
 
@@ -97,7 +97,7 @@ ion-item {
 .color {
   	display: flex;
   	flex-direction: column;
-  width: 100%;
+  	width: 100%;
   	height: 80vh;
   	text-align: center;
 
@@ -125,10 +125,9 @@ ion-item {
 }
 
 .circle {
-	
 	width: 200px;
 	height: 200px; 
-	border-radius: 50%;
+	
     display: inline-block;
 }
 ion-col, ion-buttons {

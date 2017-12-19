@@ -1,18 +1,39 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Alphabets
+      Letters
     </ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding class="card-background-page">
- 
-  <ion-card>
-   <div class="left-arrow"><ion-icon *ngIf="counter" name="arrow-dropleft" (click) = "decrement()"></ion-icon></div>
-     <div class="alphabet"> 
-     <div class="upper-case">{{alphabet}}</div>
-     <div class="lower-case">{{lAlphabet}}</div>
-  </div>
-   <div class="right-arrow"><ion-icon *ngIf="counter  < length-1" name="arrow-dropright" (click) = "increment()"></ion-icon></div>
+  <ion-card (swipe) = "swipe($event)">
+   <ion-grid>
+    <ion-row align-items-center>
+    <ion-col col-12 col-sm >
+      <div class="number">
+     <div class=" number-numeral">{{alphabet}}</div>
+   </div>
+    </ion-col>
+    <ion-col col-12 col-sm> <div class="number-word">{{lAlphabet}}</div></ion-col>
+  </ion-row>
+  </ion-grid>
   </ion-card>
 </ion-content>
+<ion-footer>
+  <ion-grid>
+  <ion-row align-items-stretch>
+    <ion-col col-auto>
+      <ion-icon  *ngIf="!playing && !counter" name="fastforward" (click) = "goToLast()"></ion-icon>
+      <ion-icon  *ngIf="counter && !playing"  isActive="counter > 0" name="skip-backward" (click) = "decrement()"></ion-icon>
+    </ion-col>
+     <ion-col>
+      <ion-icon *ngIf="!playing"  name="play" (click) = "play()"></ion-icon>
+      <ion-icon *ngIf="playing" name="pause" (click) = "pause()"></ion-icon>
+    </ion-col>
+      <ion-col col-auto>
+      <ion-icon  *ngIf="!playing && counter < length-1" name="skip-forward" (click) = "increment()"></ion-icon>
+      <ion-icon *ngIf="counter  === length-1" name="rewind"  (click) = "reset()"></ion-icon>
+    </ion-col>
+  </ion-row>
+   </ion-grid>
+</ion-footer>

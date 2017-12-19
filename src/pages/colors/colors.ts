@@ -15,19 +15,20 @@ export class Colors {
   kcolor: string = this.colors[this.counter];
   playing: boolean = false;
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController) {
+    this.playAudio();
+  }
 
   increment() {
 
     if (this.counter < this.length-1) {
   	 ++this.counter;
   	 this.word =  _.compose(_.startCase, _.get(this.counter))(this.colors);
+     this.playAudio();
      if (this.counter === this.length - 1)
-      this.playing = false;
-     
-    } else {
-      console.log('end')
-      this.playing = false;
+        this.playing = false;
+    }else {
+        this.playing = false;
     }
   }
  
@@ -35,8 +36,9 @@ export class Colors {
   	if (this.counter > 0) {
   		--this.counter;
     	this.word =  _.compose(_.startCase, _.get(this.counter))(this.colors);
+      this.playAudio();
      } else {
-     this.playing = false;
+      this.playing = false;
      }
   }
 
@@ -45,19 +47,20 @@ export class Colors {
       return;
     this.increment();
     if (this.playing)
-      setTimeout( () => this.slideShow(), 500 );;
+      setTimeout( () => this.slideShow(), 1500 );;
   }
 
   reset() { 
     this.counter = 0;
     this.word =  _.compose(_.startCase, _.get(this.counter))(this.colors);
+    this.playAudio();
   }
 
   play() {
     if (this.length -1 === this.counter)
       this.reset();
     this.playing = true;
-    setTimeout( () => { console.log('playing'); this.slideShow()}, 500 );
+    setTimeout( () => this.slideShow(), 1500 );
   }
 
   pause() {
@@ -67,6 +70,28 @@ export class Colors {
   goToLast() {
     this.counter = this.length-1;
     this.word =  _.compose(_.startCase, _.get(this.counter))(this.colors);
+    this.playAudio();
+  }
+
+  playAudio() {
+    (new Audio('assets/audio/colors/'+this.colors[this.counter]+'.m4a')).play();
+  }
+
+   ionViewWillLeave() {
+    this.playing = false;
+  }
+
+  swipe(event) {    
+    if (this.playing)
+      return;
+    switch(event.direction) {
+      case 2:
+        this.increment();
+        break;
+      case 4: 
+        this.decrement();
+        break;
+    }
   }
 
 }

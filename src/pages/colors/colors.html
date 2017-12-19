@@ -4,13 +4,12 @@
       Colors
     </ion-title>
     <ion-buttons end>
-      <ion-icon  name="volume-up" (click) = "replay()"></ion-icon>
+      <ion-icon  name="volume-up" (click) = "playAudio()"></ion-icon>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 <ion-content padding class="card-background-page">
- 
-  <ion-card>
+  <ion-card (swipe) = "swipe($event)">
    <ion-grid>
     <ion-row align-items-center>
     <ion-col col-12 col-sm >
@@ -18,7 +17,7 @@
     </ion-col>
     <ion-col col-12 col-sm> <div class="number-word">{{word}}</div></ion-col>
   </ion-row>
-</ion-grid>
+  </ion-grid>
   </ion-card>
 </ion-content>
 <ion-footer>
