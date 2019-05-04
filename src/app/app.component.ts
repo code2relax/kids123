@@ -18,5 +18,10 @@ export class MyApp {
       splashScreen.hide();
     });
   }
+
+  exitApp() {
+    alert('hello');
+    console.log('***************');
+  }
 }
 

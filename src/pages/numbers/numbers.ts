@@ -12,6 +12,7 @@ export class Numbers {
   counter: number = 0;
   word: string =  _.compose(_.startCase, NumberToWord.toWords)(this.counter);
   playing: boolean = false;
+  audio: AudioNode = null;
 
   constructor(public navCtrl: NavController) {
      this.playAudio();
@@ -61,7 +62,14 @@ export class Numbers {
   }
 
   playAudio() {
-    (new Audio('assets/audio/numbers/a'+this.counter+'.m4a')).play();
+    if(this.audio) {
+      this.audio.pause();
+    }
+    if(this.counter > 20) {
+      return;
+    }
+    this.audio = new Audio('assets/audio/numbers/a'+this.counter+'.m4a');
+    this.audio.play();
   }
 
   ionViewWillLeave() {

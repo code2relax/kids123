@@ -35,7 +35,7 @@ export class HomePage {
   }
 
   exitApp() {
-   console.log('closing the app');
-   //Platform.exitApp();
+  	console.log('exit*********************');
+  	alert('home');
   }
 }
