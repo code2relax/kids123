@@ -1,8 +1,6 @@
-import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import _ from 'lodash/fp'
-import Home from '../home/home'
 @Component({
   templateUrl: 'shapes.html'
 })
@@ -14,7 +12,6 @@ export class Shapes {
   counter: number = 0;
   word: string = _.compose(_.startCase, _.get(this.counter))(this.shapes);
   playing: boolean = false;
-   @Input() home: Home; 
   constructor(public navCtrl: NavController) {
     this.playAudio();
   }

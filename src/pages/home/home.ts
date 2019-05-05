@@ -1,4 +1,3 @@
-import {Platform} from 'ionic-angular';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Numbers } from '../numbers/numbers';
@@ -32,10 +31,5 @@ export class HomePage {
 
   goToShapes() {
   	this.navCtrl.push(Shapes);
-  }
-
-  exitApp() {
-  	console.log('exit*********************');
-  	alert('home');
   }
 }
